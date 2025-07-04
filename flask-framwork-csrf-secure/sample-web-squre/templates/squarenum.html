@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Enter a number to square</h2>
+    <form action="/" method="POST">
+      <input type="text" name="num" placeholder="Enter number">
+      <button type="submit">Submit</button>
+      
+    </form>
+    <form method="POST">
+      {{ form.csrf_token }}
+      {{ form.num(size=30)}}
+      {{ form.submit() }}
+    </form>
+
+  </body>
+</html
